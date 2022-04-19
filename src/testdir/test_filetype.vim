@@ -1567,7 +1567,7 @@ func Test_src_file()
   call delete('srcfile.Src')
 
   " KRL global deffct with embedded spaces, file starts with empty line(s).
-  for text in ['global  def  srcfile()', 'global  deffct  srcfile()']
+  for text in ['global  def  srcfile()', 'global  deffct  bool  srcfile()']
     call writefile(['', text], 'srcfile.SRC')
     split srcfile.SRC
     call assert_equal('krl', &filetype, text)
